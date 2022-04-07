@@ -1,10 +1,12 @@
+int led_pin = D5;
+
 void setup(){
-    pinMode(LED_BUILTIN,OUTPUT);
+    pinMode(led_pin,OUTPUT);
 }
 
 void loop(){
-    digitalWrite(LED_BUILTIN,HIGH);
+    digitalWrite(led_pin,HIGH);
     delay(1000);
-    digitalWrite(LED_BUILTIN,LOW);
+    digitalWrite(led_pin,LOW);
     delay(1000);
 }
