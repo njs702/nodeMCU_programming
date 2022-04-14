@@ -26,7 +26,7 @@ void setup() {
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
 
-  digitalWrite(BUILTIN_LED,LOW);
+  // digitalWrite(BUILTIN_LED,LOW);
 }
 
 float readUltraSonic(){
