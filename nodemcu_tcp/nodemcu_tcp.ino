@@ -12,6 +12,9 @@
 #include <WebSocketsServer.h>
 #include <Hash.h>
 
+#define SSID "class9"
+#define PASS "kosta9009"
+
 ESP8266WiFiMulti WiFiMulti;
 
 WebSocketsServer webSocket = WebSocketsServer(81);
@@ -37,7 +40,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
             USE_SERIAL.printf("[%u] get Text: %s\n", num, payload);
 
             // send message to client
-            // webSocket.sendTXT(num, "message here");
+            webSocket.sendTXT(num, "message here!!");
 
             // send data to all connected clients
             // webSocket.broadcastTXT("message here");
@@ -70,7 +73,7 @@ void setup() {
         delay(1000);
     }
 
-    WiFiMulti.addAP("SSID", "passpasspass");
+    WiFiMulti.addAP(SSID, PASS);
 
     while(WiFiMulti.run() != WL_CONNECTED) {
         delay(100);
